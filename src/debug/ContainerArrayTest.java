@@ -44,4 +44,26 @@ public class ContainerArrayTest {
         myContainer.remove("Bear");
         assertEquals("Remove should be same reference", alligator, myContainer.get(0));
     }
+    
+    @Test
+    public void testSizeExpansion () {
+    	for(int i = 0; i <11; i ++) myContainer.add("asdf" + i);
+    	assertEquals("yolo swag", "asdf10", myContainer.get(10));
+    }
+    
+    @Test
+    public void doesRemoveWoirk() {
+    	String el = new String("el to remove");
+    	myContainer.add(el);
+    	myContainer.remove(el);
+    	
+    	assertEquals("Getting a removed element from arr", false, myContainer.contains(el));
+    }
+    
+    @Test
+    public void checkSize() {
+        myContainer.add("Alligator");
+        myContainer.add("Bear");
+    	assertEquals("test123123", myContainer.size(), 2);
+    }
 }
